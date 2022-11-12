@@ -12,6 +12,7 @@ import Profile from "./routes/Profile";
 const router = createBrowserRouter([
   {
     element: <Root />,
+    path: "/",
     children: [
       {
         path: "/",
