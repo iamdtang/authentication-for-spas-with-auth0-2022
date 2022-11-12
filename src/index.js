@@ -10,6 +10,7 @@ import Contact from "./routes/Contact";
 const router = createBrowserRouter([
   {
     element: <Root />,
+    path: "/",
     children: [
       {
         path: "/",
