@@ -11,6 +11,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 const router = createBrowserRouter([
   {
     element: <Root />,
+    path: "/",
     children: [
       {
         path: "/",
