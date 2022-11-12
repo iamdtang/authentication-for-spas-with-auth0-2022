@@ -16,14 +16,19 @@ export default function Root() {
           </li>
 
           {isAuthenticated ? (
-            <li>
-              <button
-                type="button"
-                onClick={() => logout({ returnTo: window.location.origin })}
-              >
-                Log Out
-              </button>
-            </li>
+            <>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => logout({ returnTo: window.location.origin })}
+                >
+                  Log Out
+                </button>
+              </li>
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+            </>
           ) : (
             <li>
               <button type="button" onClick={() => loginWithRedirect()}>
