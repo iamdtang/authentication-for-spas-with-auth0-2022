@@ -6,7 +6,7 @@ export default function Profile() {
   return (
     <>
       {isAuthenticated && (
-        <li>
+        <>
           <h1>{user.name}</h1>
           <p>{user.email}</p>
           <img
@@ -15,7 +15,7 @@ export default function Profile() {
             className="rounded-circle"
             width="150"
           />
-        </li>
+        </>
       )}
     </>
   );
