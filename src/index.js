@@ -8,6 +8,7 @@ import Index from "./routes/Index";
 import Contact from "./routes/Contact";
 import { Auth0Provider } from "@auth0/auth0-react";
 import Profile from "./routes/Profile";
+import ProtectedRoute from "./auth/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile />,
+        element: <ProtectedRoute component={Profile} />,
       },
       {
         path: "/contact",
