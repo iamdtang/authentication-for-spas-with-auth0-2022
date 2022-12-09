@@ -1,8 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import AuthButtons from "../auth/AuthButtons";
 
 export default function Root() {
-  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  const { isLoading } = useAuth0();
 
   return (
     <div>
@@ -15,27 +16,7 @@ export default function Root() {
             <Link to="/contact">Contact</Link>
           </li>
 
-          {isAuthenticated ? (
-            <>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => logout({ returnTo: window.location.origin })}
-                >
-                  Log Out
-                </button>
-              </li>
-              <li>
-                <Link to="/profile">Profile</Link>
-              </li>
-            </>
-          ) : (
-            <li>
-              <button type="button" onClick={() => loginWithRedirect()}>
-                Log In
-              </button>
-            </li>
-          )}
+          {isLoading ? "" : <AuthButtons />}
         </ul>
       </nav>
 
