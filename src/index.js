@@ -7,6 +7,7 @@ import Root from "./routes/Root";
 import Index from "./routes/Index";
 import Contact from "./routes/Contact";
 import { Auth0Provider } from "@auth0/auth0-react";
+import Profile from "./routes/Profile";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Index />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
       },
       {
         path: "/contact",
